@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site avec Lucas</title>
+</head>
+<body>
+    <h1>Bienvenue sur mon site</h1>
+    <script type='text/javascript' src='https://salesforce.com'></script>
+   <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'fr'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00D24000000KvTZ',
+				'Siway_external_Portal_Pre_Prodd',
+				'https://siway.my.site.com/ESWSiwayexternalPortal1744649842207',
+				{
+					scrt2URL: 'https://siway.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://siway.my.site.com/ESWSiwayexternalPortal1744649842207/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</body>
+</html>
