@@ -19,6 +19,17 @@
 					scrt2URL: 'https://siway.my.salesforce-scrt.com'
 				}
 			);
+			 window.addEventListener(
+                    "onEmbeddedMessagingReady",
+                    () => {
+
+                        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+                            Region__c: '.fr'
+                        });
+
+                        console.log("Hidden prechat field set");
+                    }
+                );
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
