@@ -10,13 +10,6 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'fr'; // For example, enter 'en' or 'en-US'
-			window.addEventListener("onEmbeddedMessagingReady", () => {
-			    	console.log("Received the onEmbeddedMessagingReady event…");
-				    // Send data to Salesforce
-				    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-				        "Region" : "FRANCE"});
-				    
-			});
 			embeddedservice_bootstrap.init(
 				'00D24000000KvTZ',
 				'Wissal_Github',
@@ -25,6 +18,15 @@
 					scrt2URL: 'https://siway.my.salesforce-scrt.com'
 				}
 			);
+			window.addEventListener("onEmbeddedMessagingReady", () => {
+			    	console.log("Received the onEmbeddedMessagingReady event…");
+				    // Send data to Salesforce
+				    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+				        "Region" : "FRANCE"});
+
+					console.log("Hidden pre-chat fields set successfully.");
+				    
+			});
 			 
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
